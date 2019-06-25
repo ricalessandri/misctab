@@ -9,6 +9,9 @@ lblt=100ns
 lblFF=m30420
 ####################################################################
 
+# this is where the script lives; note this does not need to be the dir from where it is executed
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
 
 ####################################################################
 # Check input
@@ -27,7 +30,7 @@ if   [ ${mol_B} == "W" ]; then n_mol_B=2000; elif [ ${mol_B} == "MEO" ]; then n_
 
 # Create folder and submit the job
 mkdir -p 5050-${mol_A}-${mol_B}-${lblFF}-T${temp}-${lblt}
-cp template-miscibility/*  5050-${mol_A}-${mol_B}-${lblFF}-T${temp}-${lblt}/.
+cp ${SCRIPTPATH}/template-miscibility/*  5050-${mol_A}-${mol_B}-${lblFF}-T${temp}-${lblt}/.
 cd       5050-${mol_A}-${mol_B}-${lblFF}-T${temp}-${lblt}
 sed -i "s/--job-name=MIXTURE/--job-name=${mol_A}${mol_B}/" setup_and_run_mixture.sh
 sed -i "s/--output=MIXTURE/--output=${mol_A}${mol_B}/"     setup_and_run_mixture.sh
