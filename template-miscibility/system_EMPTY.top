@@ -1,0 +1,12 @@
+#include "/projects/0/evapora/mixtures/itps/v.3.0.4.20/martini_v3.0.4.20.itp"
+#include "/projects/0/evapora/mixtures/itps/v.3.0.4.20/martini_v3.0_solvents.itp"
+#include "/projects/0/evapora/mixtures/itps/v.3.0.4.20/martini_v3.0_rings.itp"
+
+
+[ system ]
+; Name
+50:50 mixture
+
+[ molecules ]
+; Compound      #mols
+
